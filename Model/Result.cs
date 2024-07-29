@@ -8,8 +8,10 @@ namespace AnotherQuizAPI.Model
         public int Id { get; set; }
         public int Score { get; set; }
 
-        public User? User { get; set; }
+        public int UserId { get; set; }
+        public virtual User? User { get; set; }
 
-        public virtual ICollection<QuizList> QuizLists { get; set; } = new List<QuizList>();
+        public int QuizListId { get; set; }
+        public virtual QuizList? QuizLists { get; set; }
     }
 }

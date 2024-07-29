@@ -16,12 +16,12 @@ namespace AnotherQuizAPI.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Result> Results { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Result>()
-                .HasMany(r => r.QuizLists)
-                .WithMany(q => q.Results)
-                .UsingEntity<QuizListResult>();
-        }
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     modelBuilder.Entity<Result>()
+        //         .HasMany(r => r.QuizLists)
+        //         .WithMany(q => q.Results)
+        //         .UsingEntity<QuizListResult>();
+        // }
     }
 }

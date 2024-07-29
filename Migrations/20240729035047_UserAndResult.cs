@@ -5,7 +5,7 @@
 namespace AnotherQuizAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class UserAndResults : Migration
+    public partial class UserAndResult : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,46 +32,30 @@ namespace AnotherQuizAPI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Score = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    QuizListId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Results", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Results_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "QuizListResult",
-                columns: table => new
-                {
-                    QuizListId = table.Column<int>(type: "int", nullable: false),
-                    ResultId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_QuizListResult", x => new { x.QuizListId, x.ResultId });
-                    table.ForeignKey(
-                        name: "FK_QuizListResult_QuizLists_QuizListId",
+                        name: "FK_Results_QuizLists_QuizListId",
                         column: x => x.QuizListId,
                         principalTable: "QuizLists",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_QuizListResult_Results_ResultId",
-                        column: x => x.ResultId,
-                        principalTable: "Results",
+                        name: "FK_Results_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_QuizListResult_ResultId",
-                table: "QuizListResult",
-                column: "ResultId");
+                name: "IX_Results_QuizListId",
+                table: "Results",
+                column: "QuizListId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Results_UserId",
@@ -88,9 +72,6 @@ namespace AnotherQuizAPI.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "QuizListResult");
-
             migrationBuilder.DropTable(
                 name: "Results");
 

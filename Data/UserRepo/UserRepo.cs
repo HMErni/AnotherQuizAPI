@@ -14,17 +14,17 @@ namespace AnotherQuizAPI.Data.UserRepo
 
         public async Task<IEnumerable<User>> GetAllUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Include(x => x.Results).ToListAsync();
         }
 
         public async Task<User?> GetUserById(int id)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Users.Include(x => x.Results).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<User?> GetUserByUsername(string username)
         {
-            return await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+            return await _context.Users.Include(x => x.Results).FirstOrDefaultAsync(x => x.Username == username);
         }
 
         public async Task AddUser(User user)

@@ -1,6 +1,7 @@
 using AnotherQuizAPI.Data;
 using AnotherQuizAPI.Data.QuizIemRepo;
 using AnotherQuizAPI.Data.QuizListRepo;
+using AnotherQuizAPI.Data.ResultRepo;
 using AnotherQuizAPI.Data.UserRepo;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IQuizItemRepo, QuizItemRepo>();
 builder.Services.AddScoped<IQuizListRepo, QuizListRepo>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IResultRepo, ResultRepo>();
 
 // DBConnection
 builder.Services.AddDbContext<QuizDBContext>(options =>
