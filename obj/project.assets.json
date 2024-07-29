@@ -4517,24 +4517,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hero\\.nuget\\packages\\": {}
+    "C:\\Users\\Boot Camp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\AnotherQuizAPI\\AnotherQuizAPI.csproj",
+      "projectUniqueName": "C:\\_ERNI-Hero\\AnotherQuizAPI\\AnotherQuizAPI.csproj",
       "projectName": "AnotherQuizAPI",
-      "projectPath": "D:\\Development\\AnotherQuizAPI\\AnotherQuizAPI.csproj",
-      "packagesPath": "C:\\Users\\Hero\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\AnotherQuizAPI\\obj\\",
+      "projectPath": "C:\\_ERNI-Hero\\AnotherQuizAPI\\AnotherQuizAPI.csproj",
+      "packagesPath": "C:\\Users\\Boot Camp\\.nuget\\packages\\",
+      "outputPath": "C:\\_ERNI-Hero\\AnotherQuizAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Hero\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Boot Camp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

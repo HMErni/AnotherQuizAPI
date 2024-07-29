@@ -107,7 +107,5 @@ namespace AnotherQuizAPI.Controllers
             return Ok(quizItem);
         }
 
-
-
     }
 }
