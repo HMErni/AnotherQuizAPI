@@ -6,7 +6,7 @@ namespace AnotherQuizAPI.Data.UserRepo
     {
         Task<IEnumerable<User>> GetAllUsers();
         Task<User?> GetUserById(int id);
-        Task<User?> GetUserByUsername(string username);
+        Task<User?> GetUserByUsernameAndPassword(string username, string password);
         Task AddUser(User user);
         void UpdateUser(User user);
         void DeleteUser(User user);

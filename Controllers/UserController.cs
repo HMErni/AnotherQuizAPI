@@ -38,16 +38,16 @@ namespace AnotherQuizAPI.Controllers
             return Ok(_mapper.Map<UserReadDTO>(user));
         }
 
-        [HttpGet("user/{username}")]
-        public async Task<ActionResult<UserReadDTO>> GetUserByUsername(string username)
-        {
-            var user = await _userRepo.GetUserByUsername(username);
+        // [HttpGet("user/{username}")]
+        // public async Task<ActionResult<UserReadDTO>> GetUserByUsername(string username)
+        // {
+        //     var user = await _userRepo.GetUserByUsername(username);
 
-            if (user == null)
-                return NotFound();
+        //     if (user == null)
+        //         return NotFound();
 
-            return Ok(_mapper.Map<UserReadDTO>(user));
-        }
+        //     return Ok(_mapper.Map<UserReadDTO>(user));
+        // }
 
         [HttpPost]
         public async Task<ActionResult<UserReadDTO>> CreateUser([FromBody] UserCreateDTO userCreateDTO)

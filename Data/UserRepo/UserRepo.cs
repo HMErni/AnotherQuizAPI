@@ -22,9 +22,9 @@ namespace AnotherQuizAPI.Data.UserRepo
             return await _context.Users.Include(x => x.Results).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<User?> GetUserByUsername(string username)
+        public async Task<User?> GetUserByUsernameAndPassword(string username, string password)
         {
-            return await _context.Users.Include(x => x.Results).FirstOrDefaultAsync(x => x.Username == username);
+            return await _context.Users.Include(x => x.Results).FirstOrDefaultAsync(x => x.Username == username && x.Password == password);
         }
 
         public async Task AddUser(User user)
