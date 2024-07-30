@@ -275,3 +275,4 @@ C:\_ERNI-Hero\AnotherQuizAPI\obj\Debug\net8.0\refint\AnotherQuizAPI.dll
 C:\_ERNI-Hero\AnotherQuizAPI\obj\Debug\net8.0\AnotherQuizAPI.pdb
 C:\_ERNI-Hero\AnotherQuizAPI\obj\Debug\net8.0\AnotherQuizAPI.genruntimeconfig.cache
 C:\_ERNI-Hero\AnotherQuizAPI\obj\Debug\net8.0\ref\AnotherQuizAPI.dll
+D:\Development\AnotherQuizAPI\obj\Debug\net8.0\AnotherQuizAPI.sourcelink.json

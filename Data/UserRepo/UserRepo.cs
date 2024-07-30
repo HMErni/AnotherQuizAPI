@@ -24,7 +24,12 @@ namespace AnotherQuizAPI.Data.UserRepo
 
         public async Task<User?> GetUserByUsernameAndPassword(string username, string password)
         {
-            return await _context.Users.Include(x => x.Results).FirstOrDefaultAsync(x => x.Username == username && x.Password == password);
+            return await _context.Users.Include(
+                x => x.Results).FirstOrDefaultAsync(
+                    x => EF.Functions.Collate(
+                        x.Username, "Latin1_General_BIN") == username &&
+                        EF.Functions.Collate(
+                            x.Password, "Latin1_General_BIN") == password);
         }
 
         public async Task AddUser(User user)
