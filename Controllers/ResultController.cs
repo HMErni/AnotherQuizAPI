@@ -94,7 +94,7 @@ namespace AnotherQuizAPI.Controllers
             return Ok(updatedResult);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteResult(int id)
         {
             var result = await _resultRepo.GetResultById(id);

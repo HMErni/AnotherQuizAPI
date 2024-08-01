@@ -10,7 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace AnotherQuizAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class QuizItemController : ControllerBase
     {
         private readonly IQuizItemRepo _quizItemRepo;
@@ -93,7 +93,7 @@ namespace AnotherQuizAPI.Controllers
 
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteQuizItem(int id)
         {
             var quizItem = await _quizItemRepo.GetQuizItemById(id);

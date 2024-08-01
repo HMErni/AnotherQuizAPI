@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AnotherQuizAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class QuizListController : ControllerBase
     {
         private readonly IQuizListRepo _quizListRepo;
@@ -68,7 +68,7 @@ namespace AnotherQuizAPI.Controllers
             return Ok(quizListRead);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteQuizList(int id)
         {
             var quizList = await _quizListRepo.GetQuizListById(id);

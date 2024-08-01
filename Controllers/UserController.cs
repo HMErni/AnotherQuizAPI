@@ -80,7 +80,7 @@ namespace AnotherQuizAPI.Controllers
             return Ok(updatedUser);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {
             var user = await _userRepo.GetUserById(id);
