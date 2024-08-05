@@ -25,9 +25,9 @@ namespace AnotherQuizAPI.Controllers
             var user = await _userRepo.GetUserByUsernameAndPassword(userLoginDTO.Username, userLoginDTO.Password);
 
             if (user == null)
-                return Unauthorized("Username or Password is incorrect");
+                return Unauthorized(new { message = "Username or Password is incorrect" });
 
-            return Ok(user);
+            return Ok(_mapper.Map<UserReadDTO>(user));
         }
 
 

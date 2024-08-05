@@ -55,6 +55,7 @@ namespace AnotherQuizAPI.Controllers
             return Ok(_mapper.Map<ResultReadDTO>(result));
         }
 
+
         [HttpPost]
         public async Task<ActionResult<ResultReadDTO>> CreateResult([FromBody] ResultCreateDTO resultCreateDTO)
         {

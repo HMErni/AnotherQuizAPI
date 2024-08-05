@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace AnotherQuizAPI.Model
 {
@@ -10,7 +11,6 @@ namespace AnotherQuizAPI.Model
 
         public int UserId { get; set; }
         public virtual User? User { get; set; }
-
         public int QuizListId { get; set; }
         public virtual QuizList? QuizLists { get; set; }
     }

@@ -1,5 +1,4 @@
 using AnotherQuizAPI.DTOs.ResultDTOs;
-using AnotherQuizAPI.Model;
 
 namespace AnotherQuizAPI.DTOs.UserDTOs
 {
