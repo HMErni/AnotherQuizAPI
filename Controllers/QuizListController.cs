@@ -59,6 +59,8 @@ namespace AnotherQuizAPI.Controllers
             if (quizList == null)
                 return NotFound();
 
+
+
             _mapper.Map(quizListUpdateDTO, quizList);
             _quizListRepo.UpdateQuizList(quizList);
             await _quizListRepo.SaveChanges();
