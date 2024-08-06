@@ -12,6 +12,7 @@ namespace AnotherQuizAPI.Profiles
                 .ReverseMap();
             CreateMap<UserCreateDTO, User>();
             CreateMap<UserUpdateDTO, User>();
+            CreateMap<User, UsernameReadDTO>().ReverseMap();
         }
     }
 }

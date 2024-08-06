@@ -32,6 +32,12 @@ namespace AnotherQuizAPI.Data.UserRepo
                             x.Password, "Latin1_General_BIN") == password);
         }
 
+        public async Task<User?> getUsername(string username)
+        {
+            return await _context.Users.FirstOrDefaultAsync(
+                x => EF.Functions.Collate(x.Username, "Latin1_General_BIN") == username);
+        }
+
         public async Task AddUser(User user)
         {
             if (user == null)

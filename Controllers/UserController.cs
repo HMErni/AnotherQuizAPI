@@ -38,7 +38,7 @@ namespace AnotherQuizAPI.Controllers
             return Ok(_mapper.Map<UserReadDTO>(user));
         }
 
-        [HttpGet("user")]
+        [HttpGet("Login")]
         public async Task<ActionResult<UserReadDTO>> GetUserByUsername(string username, string password)
         {
             var user = await _userRepo.GetUserByUsernameAndPassword(username, password);
@@ -49,9 +49,26 @@ namespace AnotherQuizAPI.Controllers
             return Ok(_mapper.Map<UserReadDTO>(user));
         }
 
+        [HttpPost("username")]
+        public async Task<ActionResult<UsernameReadDTO>> GetUserByUsername(string username)
+        {
+            var user = await _userRepo.getUsername(username);
+
+            if (user == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<UsernameReadDTO>(user));
+        }
+
         [HttpPost]
         public async Task<ActionResult<UserReadDTO>> CreateUser([FromBody] UserCreateDTO userCreateDTO)
         {
+
+            var checkUser = await _userRepo.getUsername(userCreateDTO.Username);
+
+            if (checkUser != null)
+                return Conflict(new { message = "Username already exists" });
+
             var user = _mapper.Map<User>(userCreateDTO);
 
             await _userRepo.AddUser(user);
